@@ -50,12 +50,3 @@ pnpm run monitor:db           # Start real-time booking monitoring
 pnpm run monitor:db stats     # Show booking statistics
 pnpm run monitor:db clear 60  # Delete bookings older than 60 minutes
 ```
-
-### Edge Case Testing
-```bash
-pnpm run edge:all             # Run all edge case tests
-pnpm run edge:duplicate       # Test duplicate booking prevention
-pnpm run edge:race            # Test race condition handling
-pnpm run edge:rapid           # Test rapid-fire requests
-pnpm run edge:validation      # Test input validation
-```
