@@ -1,5 +1,5 @@
 const https = require('http');
-const { CONFIG } = require('./config');
+const { CONFIG } = require('../config');
 
 // @ts-ignore
 function makeRequest(method, path, data = null) {

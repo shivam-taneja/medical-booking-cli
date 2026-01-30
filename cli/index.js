@@ -8,10 +8,10 @@
  * 4. Shows final result (CONFIRMED/REJECTED)
  */
 
-const { log, logSuccess, logError, logWarning, logProcessing, logInfo } = require('./logger');
-const { makeRequest } = require('./api');
-const { askQuestion, collectUserInput } = require('./input');
-const { pollBookingStatus } = require('./polling');
+const { log, logSuccess, logError, logWarning, logProcessing, logInfo } = require('./utils/logger');
+const { makeRequest } = require('./utils/api');
+const { askQuestion, collectUserInput } = require('./utils/input');
+const { pollBookingStatus } = require('./utils/polling');
 
 function printHeader() {
   log('MEDICAL BOOKING SYSTEM - INTERACTIVE CLI', 'cyan');

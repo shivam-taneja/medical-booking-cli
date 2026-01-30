@@ -1,4 +1,4 @@
-const { CONFIG } = require('./config');
+const { CONFIG } = require('../config');
 const { makeRequest } = require('./api');
 const { log, logSuccess, logError, logInfo, logProcessing, logWarning } = require('./logger');
 

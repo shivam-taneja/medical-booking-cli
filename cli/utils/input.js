@@ -1,5 +1,5 @@
 const readline = require('readline');
-const { MEDICAL_SERVICES } = require('./config');
+const { MEDICAL_SERVICES } = require('../config');
 const { log } = require('./logger');
 
 // @ts-ignore
