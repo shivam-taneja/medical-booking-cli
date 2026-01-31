@@ -73,7 +73,7 @@ async function runTestScenario(scenarioName) {
     case 'positive':
       const today = new Date().toISOString().split('T')[0];
       bookingData = {
-        userId: 'user_123',
+        userName: 'user_123',
         gender: 'Female',
         dob: today.replace(/^\d{4}/, '1995'),
         serviceNames: ['Blood Test', 'Vaccination'],
@@ -83,7 +83,7 @@ async function runTestScenario(scenarioName) {
 
     case 'banned':
       bookingData = {
-        userId: 'fail_test_user',
+        userName: 'fail_test_user',
         gender: 'Male',
         dob: '1990-05-15',
         serviceNames: ['MRI Scan'],
@@ -93,7 +93,7 @@ async function runTestScenario(scenarioName) {
 
     case 'quota':
       bookingData = {
-        userId: 'user_456',
+        userName: 'user_456',
         gender: 'Male',
         dob: '1988-03-20',
         serviceNames: ['X-Ray', 'MRI Scan'],

@@ -26,7 +26,7 @@ async function runQuotaTest(quotaLimit = 100) {
   // Submit quota + 20 requests
   for (let i = 0; i < quotaLimit + 20; i++) {
     const bookingData = {
-      userId: `quota_test_${i}`,
+      userName: `quota_test_${i}`,
       gender: 'Male',
       dob: '1990-01-15',
       serviceNames: ['X-Ray', 'MRI Scan'], // High-value to trigger discount

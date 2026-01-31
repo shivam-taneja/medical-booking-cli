@@ -33,7 +33,7 @@ class BookingMonitor {
           id: row.id.substring(0, 8),
           from: previous.status,
           to: row.status,
-          userId: row.userId,
+          userName: row.userName,
           finalPrice: row.finalPrice,
           reason: row.failReason,
         });
@@ -94,7 +94,7 @@ class BookingMonitor {
       const arrow = '→';
       const statusColor = change.to === 'CONFIRMED' ? 'green' : change.to === 'REJECTED' ? 'red' : 'yellow';
       
-      log(`   ${change.id}... | ${change.userId}`, 'dim');
+      log(`   ${change.id}... | ${change.userName}`, 'dim');
       log(`   ${change.from} ${arrow} ${change.to}`, statusColor);
       
       if (change.to === 'CONFIRMED') {
@@ -111,13 +111,13 @@ class BookingMonitor {
   displayBookingsTable(bookings) {
     log('\nRecent Bookings:', 'cyan');
     console.log('─'.repeat(80));
-    console.log('ID       | User ID         | Status     | Base   | Final  | Age');
+    console.log('ID       | User Name         | Status     | Base   | Final  | Age');
     console.log('─'.repeat(80));
 
     // @ts-ignore
     bookings.slice(0, 10).forEach(row => {
       const id = row.id.substring(0, 8);
-      const userId = row.userId.padEnd(15).substring(0, 15);
+      const userName = row.userName.padEnd(15).substring(0, 15);
       const status = row.status.padEnd(10);
       const basePrice = `₹${row.basePrice}`.padEnd(6);
       const finalPrice = row.finalPrice ? `₹${row.finalPrice}`.padEnd(6) : 'N/A   ';
@@ -128,7 +128,7 @@ class BookingMonitor {
       else if (row.status === 'REJECTED') statusColor = 'red';
       else if (row.status === 'PENDING') statusColor = 'yellow';
 
-      const line = `${id} | ${userId} | ${status} | ${basePrice} | ${finalPrice} | ${ageStr}`;
+      const line = `${id} | ${userName} | ${status} | ${basePrice} | ${finalPrice} | ${ageStr}`;
       log(line, statusColor);
     });
 
@@ -147,7 +147,7 @@ class BookingMonitor {
     stuckBookings.forEach(row => {
       const id = row.id.substring(0, 8);
       const age = Math.floor(row.age_seconds / 60);
-      log(`   ${id}... | User: ${row.userId} | Age: ${age}m`, 'red');
+      log(`   ${id}... | User: ${row.userName} | Age: ${age}m`, 'red');
     });
     
     console.log('─'.repeat(80));

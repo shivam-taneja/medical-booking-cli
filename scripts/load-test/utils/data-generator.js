@@ -38,7 +38,7 @@ function generateRandomBooking(userIndex) {
   }
 
   return {
-    userId: `load_test_user_${userIndex}`,
+    userName: `load_test_user_${userIndex}`,
     gender: genders[Math.floor(Math.random() * genders.length)],
     dob,
     serviceNames: selectedServices,

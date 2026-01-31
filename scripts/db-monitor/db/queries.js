@@ -1,7 +1,7 @@
 const getRecentBookings = `
   SELECT 
     id,
-    "userId",
+    "userName",
     gender,
     dob,
     "basePrice",
@@ -18,7 +18,7 @@ const getRecentBookings = `
 const getStuckBookings = `
   SELECT 
     id,
-    "userId",
+    "userName",
     status,
     "createdAt",
     EXTRACT(EPOCH FROM (NOW() - "createdAt")) as age_seconds
