@@ -111,7 +111,7 @@ class BookingMonitor {
   displayBookingsTable(bookings) {
     log('\nRecent Bookings:', 'cyan');
     console.log('─'.repeat(80));
-    console.log('ID       | User Name         | Status     | Base   | Final  | Age');
+    console.log('ID       | User Name       | Status     | Base   | Final  | Age');
     console.log('─'.repeat(80));
 
     // @ts-ignore
